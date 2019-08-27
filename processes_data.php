@@ -15,6 +15,7 @@ $xml = xml_parser_create();
 xml_parse_into_struct($xml, $data2, $vs);
 xml_parser_free($xml);
 
+$IMEI = "";
 $UDID = "";
 $DEVICE_PRODUCT = "";
 $DEVICE_VERSION = "";
@@ -45,9 +46,12 @@ foreach($arrayCleaned as $elem){
         case "DEVICE_NAME":
             $DEVICE_NAME = $arrayCleaned[$iterator+1]['value'];
             break;
+        case "IMEI":
+            $IMEI = $arrayCleaned[$iterator+1]['value'];
+            break;
     }
     $iterator++;
 }
 
-$params = "UDID=".$UDID."&DEVICE_PRODUCT=".$DEVICE_PRODUCT."&DEVICE_VERSION=".$DEVICE_VERSION."&DEVICE_NAME=".$DEVICE_NAME;
+$params = "UDID=".$UDID."&DEVICE_PRODUCT=".$DEVICE_PRODUCT."&DEVICE_VERSION=".$DEVICE_VERSION."&DEVICE_NAME=".$DEVICE_NAME."&IMEI=".$IMEI;
 header("Location: show_detail.php?".$params,TRUE,301);
