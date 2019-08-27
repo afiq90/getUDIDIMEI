@@ -28,7 +28,7 @@
 <key>PayloadIdentifier</key>
 <string>mx.com.hunk.getUDID</string>
 <key>PayloadDescription</key>
-<string>Knowing the UDID & IMEI of my iOS device</string>
+<string>Knowing the UDID and IMEI of my iOS device</string>
 <key>PayloadType</key>
 <string>Profile Service</string>
 </dict>
